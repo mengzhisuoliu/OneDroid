@@ -16,9 +16,9 @@
 - 📱 **设备管理**：
   - 设备、系统、CPU、GPU、内存、存储、屏幕、网络、位置、传感器、相机、温度、PROP
 - 🔧 **小工具合集**：
-    - 屏幕分析：长截图(待完善)、界面分析、屏幕录制、屏幕取色、屏幕取字
-    - 逆向调试：反编译、Logcat(待实现)、终端(待实现)、模拟位置(待实现)、wifi密码(需要root)
-    - 网络管理：抓包(待实现)、文件服务器(待实现)
+    - 屏幕分析：界面分析、屏幕录制、屏幕取色、屏幕取字
+    - 逆向调试：反编译、Logcat、终端、模拟位置
+    - 网络管理：文件服务器、wifi密码(需要root)
 ## 💾 下载
 
 在 [Release页面](https://github.com/QingGeTech/OneDroid/releases) 下载最新的APK
@@ -68,7 +68,5 @@
 - 邮箱：qinggetech@163.com
 - 微信服务号
 <img src="screenshots/wx_fwh_qrcode.jpg" width="200" alt="微信服务号">
-- 微信群聊
-<img src="web/wechat_group.png" alt="微信群聊" width="200">
 - Discord群聊
 <img src="web/discord_group.png" alt="Discord群聊" width="200">

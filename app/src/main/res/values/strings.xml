@@ -462,4 +462,106 @@
     <string name="disagree">Disagree</string>
     <string name="os">System</string>
 
+    <string name="capture">Capture</string>
+    <string name="auto_capture">Auto Capture</string>
+    <string name="auto_capture_stop">Stop Auto</string>
+    <string name="scroll_screenshot_align_failed">Frame misaligned, skipped (scroll slower)</string>
+    <string name="scroll_screenshot_height_limit">Max stitched height reached, finishing automatically</string>
+    <string name="scroll_screenshot_hint">Scroll to capture, tap the screen to finish</string>
+    <string name="screenshot_count">Captured: %1$d</string>
+    <string name="screen_not_changed">Screen not changed, please scroll and try again</string>
+    <string name="screen_size_changed">Screen size changed, screenshot skipped</string>
+    <string name="screenshot_limit_reached">Reached the max number of captures (%1$d), please tap Done to stitch</string>
+    <string name="scroll_screenshot_stitching">Stitching…</string>
+    <string name="scroll_screenshot_too_fast">Scrolling too fast, please slow down</string>
+
+    <string name="stop">Stop</string>
+    <string name="logcat_level">Level</string>
+    <string name="logcat_keyword">Keyword</string>
+    <string name="logcat_running">Logcat is running</string>
+    <string name="logcat_stopped">Logcat is stopped</string>
+    <string name="logcat_copied">Copied to clipboard</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="clear">Clear</string>
+    <string name="save_log">Save log</string>
+    <string name="only_self_logs">No root, only this app\'s logs are visible</string>
+
+    <string name="run">Run</string>
+    <string name="terminal_no_root">Non-root shell (no root granted)</string>
+    <string name="terminal_root">Root shell</string>
+    <string name="input_command">Input command</string>
+    <string name="terminal_stop">Stop current command</string>
+    <string name="terminal_command_stopped">-- shell reset --</string>
+    <string name="terminal_exit_code">exit code: %1$d</string>
+
+    <string name="mock_location_start">Start Mocking</string>
+    <string name="mock_location_stop">Stop Mocking</string>
+    <string name="mock_location_running">Mock location is running: %1$s</string>
+    <string name="mock_location_not_allowed">Current app is not allowed to mock location, please select this app as mock location app in developer options</string>
+    <string name="go_to_dev_options">Go to developer options</string>
+    <string name="invalid_latitude_longitude">Invalid latitude or longitude</string>
+
+    <string name="net_capture_start">Start Capture</string>
+    <string name="net_capture_stop">Stop Capture</string>
+    <string name="net_capture_running">Capturing: %1$d requests, %2$s</string>
+    <string name="net_capture_choose_app">Choose App</string>
+    <string name="net_capture_install_cert">Install HTTPS Cert</string>
+    <string name="net_capture_all_apps">All Apps</string>
+    <string name="net_capture_search_app">Search apps</string>
+    <string name="net_capture_app_effect_next">App selected, takes effect on next capture start</string>
+    <string name="net_capture_cert_ready">Certificate ready, confirm installation in the system dialog</string>
+    <string name="net_capture_cert_saved">Certificate saved. Open your file manager, find the certificate file and install it manually (Settings → Security → Encryption &amp; credentials → Install a certificate)</string>
+    <string name="net_capture_install_failed">Failed to generate certificate</string>
+    <string name="net_capture_packet_detail">Packet Detail</string>
+    <string name="net_capture_filter_hint">Filter displayed packets, e.g. tcp</string>
+    <string name="net_capture_finished">Captured %1$d requests, saved to %2$s</string>
+    <string name="net_capture_stopped_tips">Ready, tap Start to begin capturing (non-root, VPN based)</string>
+    <string name="net_capture_starting">Starting VPN…</string>
+    <string name="net_capture_vpn_denied">VPN permission denied, cannot capture</string>
+    <string name="net_capture_vpn_error">Failed to establish VPN, please try again</string>
+    <string name="net_capture_no_file">No capture file yet</string>
+
+    <string name="http_detail">Request Detail</string>
+    <string name="http_request">Request</string>
+    <string name="http_response">Response</string>
+    <string name="http_detail_unavailable">Transaction unavailable (capture may have been cleared)</string>
+    <string name="http_request_headers">Request Headers</string>
+    <string name="http_request_body">Request Body</string>
+    <string name="http_response_headers">Response Headers</string>
+    <string name="http_response_body">Response Body</string>
+    <string name="http_empty_body">(empty)</string>
+    <string name="http_waiting_response">(request sent, waiting for response…)</string>
+    <string name="http_request_failed">(request failed: %1$s)</string>
+    <string name="http_unknown_error">unknown error</string>
+
+    <string name="file_server_start">Start Server</string>
+    <string name="file_server_stop">Stop Server</string>
+    <string name="file_server_running">File server is running at:</string>
+    <string name="file_server_stopped">File server is stopped</string>
+    <string name="file_server_url_copied">URL copied</string>
+    <string name="file_server_no_wifi">Please make sure phone and computer are in the same network</string>
+
+    <string name="dev_tools">Dev</string>
+    <string name="dev_codec">Encode / Decode</string>
+    <string name="dev_crypto">Crypto / Hash</string>
+    <string name="dev_format_tool">Formatter</string>
+    <string name="dev_format">Format</string>
+    <string name="dev_input">Input</string>
+    <string name="dev_output">Output</string>
+    <string name="dev_encode">Encode</string>
+    <string name="dev_decode">Decode</string>
+    <string name="dev_copy">Copy</string>
+    <string name="dev_copied">Copied</string>
+    <string name="dev_input_empty">Input is empty</string>
+    <string name="dev_error">Error: %1$s</string>
+    <string name="dev_algorithm">Algorithm</string>
+    <string name="dev_key">Key</string>
+    <string name="dev_iv">IV (16 bytes)</string>
+    <string name="dev_run">Run</string>
+    <string name="dev_type">Type</string>
+    <string name="dev_pretty">Pretty</string>
+    <string name="dev_compress">Compress</string>
+    <string name="dev_validate">Validate</string>
+
 </resources>

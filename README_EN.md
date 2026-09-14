@@ -18,9 +18,9 @@ Official Website: [https://qingge.tech/onedroid/web/](https://qingge.tech/onedro
   - Device, System, CPU, GPU, Memory, Storage, Screen, Network, Location, Sensors, Camera, Temperature, PROP
 
 - 🔧 **Tool Collection**:
-    - Screen Analysis: Long Screenshot (In Progress), Layout Inspector, Screen Recording, Color Picker, Text Recognition
-    - Reverse Debugging: Decompile, Logcat (To be Implemented), Terminal (To be Implemented), Mock Location (To be Implemented), WiFi Password (Requires Root)
-    - Network Management: Packet Capture (To be Implemented), File Server (To be Implemented)
+    - Screen Analysis: Layout Inspector, Screen Recording, Color Picker, Text Recognition
+    - Reverse Debugging: Decompile, Logcat, Terminal, Mock Location
+    - Network Management: File Server, WiFi Password (Requires Root)
 
 ## 💾 Download
 
@@ -72,7 +72,5 @@ This project is licensed under the [CC BY-NC-SA 4.0 (Attribution-NonCommercial-S
 - Email: qinggetech@163.com
 - WeChat Service Account:
 <img src="screenshots/wx_fwh_qrcode.jpg" width="200" alt="WeChat Service Account">
-- WeChat Group Chat:
-<img src="web/wechat_group.png" alt="WeChat Group Chat" width="200">
 - Discord Group Chat:
 <img src="web/discord_group.png" alt="Discord Group Chat" width="200">

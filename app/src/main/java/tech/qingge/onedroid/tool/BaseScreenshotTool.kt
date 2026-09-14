@@ -79,7 +79,7 @@ abstract class BaseScreenshotTool {
                 imageReader = ImageReader.newInstance(
                     DeviceUtil.getScreenWidth(appContext),
                     DeviceUtil.getScreenHeight(appContext),
-                    PixelFormat.RGBA_8888, 1
+                    PixelFormat.RGBA_8888, 2
                 )
                 virtualDisplay =
                     mediaProjectionService!!.createVirtualDisplay(imageReader!!.surface)

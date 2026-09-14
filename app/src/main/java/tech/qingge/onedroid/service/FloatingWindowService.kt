@@ -25,6 +25,7 @@ import tech.qingge.onedroid.tool.LayoutInspectTool
 import tech.qingge.onedroid.tool.PickColorTool
 import tech.qingge.onedroid.tool.PickTextTool
 import tech.qingge.onedroid.tool.ScreenRecordTool
+
 import tech.qingge.onedroid.util.DeviceUtil
 import javax.inject.Inject
 
@@ -45,6 +46,7 @@ class FloatingWindowService : BaseForegroundService() {
 
     @Inject
     lateinit var layoutInspectTool: LayoutInspectTool
+
 
 
     @Inject
@@ -141,7 +143,7 @@ class FloatingWindowService : BaseForegroundService() {
         listOf(
             binding.btnPickColor,
             binding.btnTextOcr,
-//            binding.btnScrollScreenshot,
+
             binding.btnLayoutInspect,
             binding.btnScreenRecord
         ).forEach { it.setOnClickListener(this::onClick) }

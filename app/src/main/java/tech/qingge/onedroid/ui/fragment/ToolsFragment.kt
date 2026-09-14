@@ -17,6 +17,11 @@ import tech.qingge.onedroid.databinding.FragmentToolsBinding
 import tech.qingge.onedroid.service.FloatingWindowService
 import tech.qingge.onedroid.tool.WifiPasswordViewer
 import tech.qingge.onedroid.ui.activity.DecompileActivity
+import tech.qingge.onedroid.ui.activity.FileServerActivity
+import tech.qingge.onedroid.ui.activity.LogcatActivity
+import tech.qingge.onedroid.ui.activity.MockLocationActivity
+
+import tech.qingge.onedroid.ui.activity.TerminalActivity
 import tech.qingge.onedroid.ui.dialog.Dialogs
 import tech.qingge.onedroid.util.CommonPermissionCallback
 import tech.qingge.onedroid.util.FileUtil
@@ -31,6 +36,7 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
 
     private var floatingWindowService: FloatingWindowService? = null
     private var serviceConnection: ServiceConnection? = null
+
 
     private val filePickerLauncher =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
@@ -53,7 +59,6 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
     override fun initViews() {
 
         listOf(
-            binding.llScreenShot,
             binding.llUiInspect,
             binding.llScreenRecord,
             binding.llPickColor,
@@ -63,7 +68,6 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
             binding.llTerminal,
             binding.llMockLocation,
             binding.llWifiPassword,
-            binding.llNetCapture,
             binding.llFileServer
         ).forEach { it.setOnClickListener(this) }
 
@@ -99,7 +103,6 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
 
     override fun onClick(v: View) {
         when (v.id) {
-            binding.llScreenShot.id -> onClickScreenshot()
             binding.llUiInspect.id -> onClickUiInspect()
             binding.llScreenRecord.id -> onClickScreenRecord()
             binding.llPickColor.id -> onClickPickColor()
@@ -109,33 +112,29 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
             binding.llTerminal.id -> onClickTerminal()
             binding.llMockLocation.id -> onClickMockLocation()
             binding.llWifiPassword.id -> onClickWifiPassword()
-            binding.llNetCapture.id -> onClickNetCapture()
             binding.llFileServer.id -> onClickFileServer()
         }
     }
 
     private fun onClickFileServer() {
-        Dialogs.showMessageTips(requireActivity(), getString(R.string.developing))
+        startActivity(Intent(requireContext(), FileServerActivity::class.java))
     }
 
-    private fun onClickNetCapture() {
-        Dialogs.showMessageTips(requireActivity(), getString(R.string.developing))
-    }
 
     private fun onClickWifiPassword() {
         WifiPasswordViewer.run(requireActivity(), lifecycleScope, childFragmentManager)
     }
 
     private fun onClickMockLocation() {
-        Dialogs.showMessageTips(requireActivity(), getString(R.string.developing))
+        startActivity(Intent(requireContext(), MockLocationActivity::class.java))
     }
 
     private fun onClickTerminal() {
-        Dialogs.showMessageTips(requireActivity(), getString(R.string.developing))
+        startActivity(Intent(requireContext(), TerminalActivity::class.java))
     }
 
     private fun onClickLogcat() {
-        Dialogs.showMessageTips(requireActivity(), getString(R.string.developing))
+        startActivity(Intent(requireContext(), LogcatActivity::class.java))
     }
 
     private fun onClickDecompile() {
@@ -159,9 +158,6 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
         requestSystemWindowPermission()
     }
 
-    private fun onClickScreenshot() {
-        Dialogs.showMessageTips(requireActivity(), getString(R.string.developing))
-    }
 
     private fun requestSystemWindowPermission() {
         XXPermissions.with(requireContext()).permission(Permission.SYSTEM_ALERT_WINDOW)
@@ -169,11 +165,15 @@ class ToolsFragment @Inject constructor() : BaseFragment<FragmentToolsBinding>()
                 override fun onAllGranted() {
                     launchFWService()
                 }
-
             })
     }
 
     private fun launchFWService() {
+        // 已经绑定过就复用，避免重复 startService/bindService 导致 ServiceConnection 泄漏
+        if (floatingWindowService != null) {
+            binding.switchFab.isChecked = true
+            return
+        }
         val intent = Intent(requireContext(), FloatingWindowService::class.java)
         serviceConnection = object : ServiceConnection {
             override fun onServiceConnected(name: ComponentName?, service: IBinder?) {

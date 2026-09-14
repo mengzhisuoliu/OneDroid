@@ -462,4 +462,106 @@
     <string name="disagree">拒绝</string>
     <string name="os">系统</string>
 
+    <string name="capture">截取</string>
+    <string name="auto_capture">自动截图</string>
+    <string name="auto_capture_stop">停止自动</string>
+    <string name="scroll_screenshot_align_failed">无法对齐该帧，已跳过（请放慢滚动速度）</string>
+    <string name="scroll_screenshot_height_limit">已达最大拼接长度，自动完成拼接</string>
+    <string name="scroll_screenshot_hint">滚动屏幕截取内容，轻点屏幕即可完成</string>
+    <string name="screenshot_count">已截取 %1$d 张</string>
+    <string name="screen_not_changed">屏幕内容无变化，请滚动后重试</string>
+    <string name="screen_size_changed">屏幕尺寸发生变化，已跳过本次截图</string>
+    <string name="screenshot_limit_reached">已达最大截图数量（%1$d 张），请点击完成进行拼接</string>
+    <string name="scroll_screenshot_stitching">正在拼接…</string>
+    <string name="scroll_screenshot_too_fast">滚动过快，请放慢速度</string>
+
+    <string name="stop">停止</string>
+    <string name="logcat_level">级别</string>
+    <string name="logcat_keyword">关键字</string>
+    <string name="logcat_running">Logcat 读取中</string>
+    <string name="logcat_stopped">Logcat 已停止</string>
+    <string name="logcat_copied">已复制到剪贴板</string>
+    <string name="pause">暂停</string>
+    <string name="resume">继续</string>
+    <string name="clear">清空</string>
+    <string name="save_log">保存日志</string>
+    <string name="only_self_logs">未获取 root，仅能查看本应用日志</string>
+
+    <string name="run">执行</string>
+    <string name="terminal_no_root">非 root shell（未授予 root 权限）</string>
+    <string name="terminal_root">Root shell</string>
+    <string name="input_command">输入命令</string>
+    <string name="terminal_stop">终止当前命令</string>
+    <string name="terminal_command_stopped">-- shell 已重置 --</string>
+    <string name="terminal_exit_code">退出码：%1$d</string>
+
+    <string name="mock_location_start">开始模拟</string>
+    <string name="mock_location_stop">停止模拟</string>
+    <string name="mock_location_running">模拟位置运行中：%1$s</string>
+    <string name="mock_location_not_allowed">当前应用未被允许模拟位置，请在开发者选项中选择模拟位置信息应用为本应用</string>
+    <string name="go_to_dev_options">前往开发者选项</string>
+    <string name="invalid_latitude_longitude">经纬度不合法</string>
+
+    <string name="net_capture_start">开始抓包</string>
+    <string name="net_capture_stop">停止抓包</string>
+    <string name="net_capture_running">抓包中：%1$d 个请求，%2$s</string>
+    <string name="net_capture_choose_app">选择应用</string>
+    <string name="net_capture_install_cert">安装HTTPS证书</string>
+    <string name="net_capture_all_apps">全部应用</string>
+    <string name="net_capture_search_app">搜索应用</string>
+    <string name="net_capture_app_effect_next">已选择应用，重新开始抓包后生效</string>
+    <string name="net_capture_cert_ready">证书已生成，请在系统弹窗中确认安装</string>
+    <string name="net_capture_cert_saved">证书已保存，请打开文件管理器找到证书文件并手动安装（设置 → 安全 → 加密与凭据 → 安装证书）</string>
+    <string name="net_capture_install_failed">证书生成失败</string>
+    <string name="net_capture_packet_detail">数据包详情</string>
+    <string name="net_capture_filter_hint">过滤显示的数据包，如 tcp</string>
+    <string name="net_capture_finished">共抓取 %1$d 个请求，已保存至 %2$s</string>
+    <string name="net_capture_stopped_tips">就绪，点击开始抓包（基于 VPN，无需 root）</string>
+    <string name="net_capture_starting">正在启动 VPN…</string>
+    <string name="net_capture_vpn_denied">VPN 权限被拒绝，无法抓包</string>
+    <string name="net_capture_vpn_error">VPN 建立失败，请重试</string>
+    <string name="net_capture_no_file">还没有抓包文件</string>
+
+    <string name="http_detail">请求详情</string>
+    <string name="http_request">请求</string>
+    <string name="http_response">响应</string>
+    <string name="http_detail_unavailable">事务不可用（抓包可能已被清空）</string>
+    <string name="http_request_headers">请求头</string>
+    <string name="http_request_body">请求体</string>
+    <string name="http_response_headers">响应头</string>
+    <string name="http_response_body">响应体</string>
+    <string name="http_empty_body">（空）</string>
+    <string name="http_waiting_response">（请求已发送，等待响应…）</string>
+    <string name="http_request_failed">（请求失败：%1$s）</string>
+    <string name="http_unknown_error">未知错误</string>
+
+    <string name="file_server_start">启动服务</string>
+    <string name="file_server_stop">停止服务</string>
+    <string name="file_server_running">文件服务器运行中：</string>
+    <string name="file_server_stopped">文件服务器已停止</string>
+    <string name="file_server_url_copied">链接已复制</string>
+    <string name="file_server_no_wifi">请确保手机与电脑处于同一网络</string>
+
+    <string name="dev_tools">开发</string>
+    <string name="dev_codec">编码 / 解码</string>
+    <string name="dev_crypto">加密 / 哈希</string>
+    <string name="dev_format_tool">格式化</string>
+    <string name="dev_format">格式</string>
+    <string name="dev_input">输入</string>
+    <string name="dev_output">输出</string>
+    <string name="dev_encode">编码</string>
+    <string name="dev_decode">解码</string>
+    <string name="dev_copy">复制</string>
+    <string name="dev_copied">已复制</string>
+    <string name="dev_input_empty">输入为空</string>
+    <string name="dev_error">错误：%1$s</string>
+    <string name="dev_algorithm">算法</string>
+    <string name="dev_key">密钥</string>
+    <string name="dev_iv">IV（16 字节）</string>
+    <string name="dev_run">执行</string>
+    <string name="dev_type">类型</string>
+    <string name="dev_pretty">美化</string>
+    <string name="dev_compress">压缩</string>
+    <string name="dev_validate">校验</string>
+
 </resources>

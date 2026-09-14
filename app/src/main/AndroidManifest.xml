@@ -18,6 +18,12 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -31,6 +37,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
@@ -54,12 +61,7 @@
             android:launchMode="singleInstance"
             android:taskAffinity=".screenrecord" />
         <activity
-            android:name=".ui.activity.ScrollScreenshotResultActivity"
-            android:autoRemoveFromRecents="true"
-            android:exported="true"
-            android:launchMode="singleInstance"
-            android:taskAffinity=".scrollscreenshot" />
-        <activity
+
             android:name=".ui.activity.PickColorActivity"
             android:autoRemoveFromRecents="true"
             android:exported="false"
@@ -110,6 +112,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.SqliteTableDetailActivity" />
+        <activity android:name=".ui.activity.LogcatActivity" />
+        <activity
+            android:name=".ui.activity.TerminalActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.activity.MockLocationActivity" />
+        <activity android:name=".ui.activity.NetCaptureActivity" />
+        <activity android:name=".ui.activity.HttpTransactionActivity" />
+        <activity android:name=".ui.activity.FileServerActivity" />
+
 
         <service
             android:name=".service.ToolsAccessibilityService"
@@ -129,7 +140,30 @@
             android:foregroundServiceType="mediaProjection" />
         <service
             android:name=".service.FloatingWindowService"
-            android:foregroundServiceType="specialUse" /> <!-- 告知 XXPermissions 当前项目已经适配了分区存储特性 -->
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="OneDroid floating window and on-screen tools" />
+        </service>
+        <service
+            android:name=".service.FileServerService"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="OneDroid local file server" />
+        </service>
+        <service
+            android:name=".service.CaptureVpnService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="OneDroid VPN packet capture" />
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service> <!-- 告知 XXPermissions 当前项目已经适配了分区存储特性 -->
         <meta-data
             android:name="ScopedStorage"
             android:value="true" />

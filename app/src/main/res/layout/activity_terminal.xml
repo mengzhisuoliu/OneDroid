@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_terminal"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+        app:title="@string/terminal" />
+
+    <!-- 输出区：深色终端风格卡片，与输入区明显区分 -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="#FF101418"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:padding="10dp"
+                    android:textColor="#FFE6E6E6"
+                    android:textIsSelectable="true"
+                    android:textSize="12sp" />
+
+            </ScrollView>
+
+        </HorizontalScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 常用命令 -->
+    <HorizontalScrollView
+        android:id="@+id/hs_quick_commands"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingTop="4dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_quick_commands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 输入区 -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:paddingLeft="8dp"
+                android:text="$"
+                android:textColor="#FF4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_command"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="monospace"
+                android:hint="@string/input_command"
+                android:imeOptions="actionGo"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:maxLines="4"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_run"
+                style="@style/Widget.Material3.Button.IconButton.Filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                app:icon="@drawable/ic_arrow_right2" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

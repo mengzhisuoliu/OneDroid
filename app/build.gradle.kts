@@ -23,8 +23,8 @@ android {
         applicationId = "tech.qingge.onedroid"
         minSdk = 21
         targetSdk = 36
-        versionCode = 10002
-        versionName = "1.0.2"
+        versionCode = 10010
+        versionName = "1.1.0"
 
     }
 
@@ -96,5 +96,7 @@ dependencies {
     implementation(libs.umeng.common)
     implementation(libs.umeng.asms)
     implementation(libs.umeng.apm)
+
+    testImplementation(libs.junit)
 
 }
